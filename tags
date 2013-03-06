@@ -1,0 +1,73 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CConnctionPool	connect_pool.cpp	/^CConnctionPool::CConnctionPool(string url, string userName, string password, int maxSize)$/;"	f	class:CConnctionPool
+CConnctionPool	connect_pool.h	/^	CConnctionPool(string url, string userName, string password, int maxSize);$/;"	p	class:CConnctionPool	access:private
+CConnctionPool	connect_pool.h	/^class CConnctionPool {$/;"	c
+CConnctionPool::CConnctionPool	connect_pool.cpp	/^CConnctionPool::CConnctionPool(string url, string userName, string password, int maxSize)$/;"	f	class:CConnctionPool
+CConnctionPool::CConnctionPool	connect_pool.h	/^	CConnctionPool(string url, string userName, string password, int maxSize);$/;"	p	class:CConnctionPool	access:private
+CConnctionPool::CreateConnection	connect_pool.cpp	/^Connection* CConnctionPool::CreateConnection(void)$/;"	f	class:CConnctionPool
+CConnctionPool::CreateConnection	connect_pool.h	/^	Connection* CreateConnection(void);$/;"	p	class:CConnctionPool	access:private
+CConnctionPool::GetConnection	connect_pool.cpp	/^Connection* CConnctionPool::GetConnection(void)$/;"	f	class:CConnctionPool
+CConnctionPool::GetConnection	connect_pool.h	/^	Connection* GetConnection(void);$/;"	p	class:CConnctionPool	access:public
+CConnctionPool::GetCurrentSize	connect_pool.cpp	/^int CConnctionPool::GetCurrentSize(void)$/;"	f	class:CConnctionPool
+CConnctionPool::GetCurrentSize	connect_pool.h	/^	int GetCurrentSize(void);$/;"	p	class:CConnctionPool	access:public
+CConnctionPool::GetInstance	connect_pool.cpp	/^CConnctionPool& CConnctionPool::GetInstance(void)$/;"	f	class:CConnctionPool
+CConnctionPool::GetInstance	connect_pool.h	/^	static CConnctionPool& GetInstance(void);$/;"	p	class:CConnctionPool	access:public
+CConnctionPool::InitConnection	connect_pool.cpp	/^void CConnctionPool::InitConnection(int iInitialSize)$/;"	f	class:CConnctionPool
+CConnctionPool::InitConnection	connect_pool.h	/^	void InitConnection(int iInitialSize);$/;"	p	class:CConnctionPool	access:private
+CConnctionPool::ReleaseConnection	connect_pool.cpp	/^void CConnctionPool::ReleaseConnection(Connection* pConn)$/;"	f	class:CConnctionPool
+CConnctionPool::ReleaseConnection	connect_pool.h	/^	void ReleaseConnection(Connection *pConn);$/;"	p	class:CConnctionPool	access:public
+CConnctionPool::TerminateConnection	connect_pool.cpp	/^void CConnctionPool::TerminateConnection(Connection *pConn)$/;"	f	class:CConnctionPool
+CConnctionPool::TerminateConnection	connect_pool.h	/^	void TerminateConnection(Connection* pConn);$/;"	p	class:CConnctionPool	access:private
+CConnctionPool::TerminateConnectionPool	connect_pool.cpp	/^void CConnctionPool::TerminateConnectionPool(void)$/;"	f	class:CConnctionPool
+CConnctionPool::TerminateConnectionPool	connect_pool.h	/^	void TerminateConnectionPool(void);$/;"	p	class:CConnctionPool	access:private
+CConnctionPool::auto_ptr_instance	connect_pool.cpp	/^auto_ptr<CConnctionPool> CConnctionPool::auto_ptr_instance;$/;"	m	class:CConnctionPool	file:
+CConnctionPool::auto_ptr_instance	connect_pool.h	/^	static auto_ptr<CConnctionPool> auto_ptr_instance;$/;"	m	class:CConnctionPool	access:private
+CConnctionPool::lock	connect_pool.h	/^	pthread_mutex_t lock;$/;"	m	class:CConnctionPool	access:private
+CConnctionPool::m_connlist	connect_pool.h	/^	list<Connection*>m_connlist;$/;"	m	class:CConnctionPool	access:private
+CConnctionPool::m_icurSize	connect_pool.h	/^	int m_icurSize;	$/;"	m	class:CConnctionPool	access:private
+CConnctionPool::m_imaxSize	connect_pool.h	/^	int m_imaxSize;$/;"	m	class:CConnctionPool	access:private
+CConnctionPool::m_pdriver	connect_pool.h	/^	Driver *m_pdriver;$/;"	m	class:CConnctionPool	access:private
+CConnctionPool::m_spassword	connect_pool.h	/^	string m_spassword;$/;"	m	class:CConnctionPool	access:private
+CConnctionPool::m_surl	connect_pool.h	/^	string m_surl;$/;"	m	class:CConnctionPool	access:private
+CConnctionPool::m_suserName	connect_pool.h	/^	string m_suserName;$/;"	m	class:CConnctionPool	access:private
+CConnctionPool::~CConnctionPool	connect_pool.cpp	/^CConnctionPool::~CConnctionPool(void)$/;"	f	class:CConnctionPool
+CConnctionPool::~CConnctionPool	connect_pool.h	/^	~CConnctionPool(void);$/;"	p	class:CConnctionPool	access:public
+CreateConnection	connect_pool.cpp	/^Connection* CConnctionPool::CreateConnection(void)$/;"	f	class:CConnctionPool
+CreateConnection	connect_pool.h	/^	Connection* CreateConnection(void);$/;"	p	class:CConnctionPool	access:private
+GetConnection	connect_pool.cpp	/^Connection* CConnctionPool::GetConnection(void)$/;"	f	class:CConnctionPool
+GetConnection	connect_pool.h	/^	Connection* GetConnection(void);$/;"	p	class:CConnctionPool	access:public
+GetCurrentSize	connect_pool.cpp	/^int CConnctionPool::GetCurrentSize(void)$/;"	f	class:CConnctionPool
+GetCurrentSize	connect_pool.h	/^	int GetCurrentSize(void);$/;"	p	class:CConnctionPool	access:public
+GetInstance	connect_pool.cpp	/^CConnctionPool& CConnctionPool::GetInstance(void)$/;"	f	class:CConnctionPool
+GetInstance	connect_pool.h	/^	static CConnctionPool& GetInstance(void);$/;"	p	class:CConnctionPool	access:public
+InitConnection	connect_pool.cpp	/^void CConnctionPool::InitConnection(int iInitialSize)$/;"	f	class:CConnctionPool
+InitConnection	connect_pool.h	/^	void InitConnection(int iInitialSize);$/;"	p	class:CConnctionPool	access:private
+ReleaseConnection	connect_pool.cpp	/^void CConnctionPool::ReleaseConnection(Connection* pConn)$/;"	f	class:CConnctionPool
+ReleaseConnection	connect_pool.h	/^	void ReleaseConnection(Connection *pConn);$/;"	p	class:CConnctionPool	access:public
+TerminateConnection	connect_pool.cpp	/^void CConnctionPool::TerminateConnection(Connection *pConn)$/;"	f	class:CConnctionPool
+TerminateConnection	connect_pool.h	/^	void TerminateConnection(Connection* pConn);$/;"	p	class:CConnctionPool	access:private
+TerminateConnectionPool	connect_pool.cpp	/^void CConnctionPool::TerminateConnectionPool(void)$/;"	f	class:CConnctionPool
+TerminateConnectionPool	connect_pool.h	/^	void TerminateConnectionPool(void);$/;"	p	class:CConnctionPool	access:private
+_CONNECTION_POOL_H_	connect_pool.h	/^#define _CONNECTION_POOL_H_$/;"	d
+auto_ptr_instance	connect_pool.cpp	/^auto_ptr<CConnctionPool> CConnctionPool::auto_ptr_instance;$/;"	m	class:CConnctionPool	file:
+auto_ptr_instance	connect_pool.h	/^	static auto_ptr<CConnctionPool> auto_ptr_instance;$/;"	m	class:CConnctionPool	access:private
+g_imaxSize	connect_pool.cpp	/^const int g_imaxSize = 50;$/;"	v
+g_sdefaultHost	connect_pool.cpp	/^const string g_sdefaultHost = "localhost";$/;"	v
+g_sdefaultPass	connect_pool.cpp	/^const string g_sdefaultPass = "qwer1234";$/;"	v
+g_sdefaultUser	connect_pool.cpp	/^const string g_sdefaultUser = "root";$/;"	v
+lock	connect_pool.h	/^	pthread_mutex_t lock;$/;"	m	class:CConnctionPool	access:private
+m_connlist	connect_pool.h	/^	list<Connection*>m_connlist;$/;"	m	class:CConnctionPool	access:private
+m_icurSize	connect_pool.h	/^	int m_icurSize;	$/;"	m	class:CConnctionPool	access:private
+m_imaxSize	connect_pool.h	/^	int m_imaxSize;$/;"	m	class:CConnctionPool	access:private
+m_pdriver	connect_pool.h	/^	Driver *m_pdriver;$/;"	m	class:CConnctionPool	access:private
+m_spassword	connect_pool.h	/^	string m_spassword;$/;"	m	class:CConnctionPool	access:private
+m_surl	connect_pool.h	/^	string m_surl;$/;"	m	class:CConnctionPool	access:private
+m_suserName	connect_pool.h	/^	string m_suserName;$/;"	m	class:CConnctionPool	access:private
+main	main.cpp	/^int main(int argc, char* argv[])$/;"	f
+~CConnctionPool	connect_pool.cpp	/^CConnctionPool::~CConnctionPool(void)$/;"	f	class:CConnctionPool
+~CConnctionPool	connect_pool.h	/^	~CConnctionPool(void);$/;"	p	class:CConnctionPool	access:public
