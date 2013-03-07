@@ -5,16 +5,20 @@
  * @version 0.0.1
  * @date 2013-03-05
  */
+
 #include <iostream>
+#include <time.h>
 #include "connect_pool.h"
 
 using namespace std;
 
 int main(int argc, char* argv[])
 {
+	clock_t tStart, tStop;
+	tStart = clock();
 	CConnctionPool::GetInstance();
-/*	for (int i = 0; i < 8000; ++i)*/
-	int i = 0;
+	for (int i = 0; i < 8000; ++i)
+	//int i = 0;
 	{
 		cout<<i<<endl;
 		Connection* pconn = CConnctionPool::GetInstance().GetConnection();
@@ -43,6 +47,9 @@ int main(int argc, char* argv[])
 			CConnctionPool::GetInstance().ReleaseConnection(pconn);
 		}
 	}
+	tStop = clock();
+	printf("C++: %ldms.\n",
+			(tStop - tStart) * 1000 / CLOCKS_PER_SEC);
 	cout<<"--Done.--"<<endl;
 	return 0;
 }
