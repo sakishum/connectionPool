@@ -12,20 +12,30 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	Connection* pconn = NULL;
 	CConnctionPool::GetInstance();
-	for (int i = 0; i < 100; ++i)
+/*	for (int i = 0; i < 8000; ++i)*/
+	int i = 0;
 	{
 		cout<<i<<endl;
+		Connection* pconn = NULL;
 		pconn = CConnctionPool::GetInstance().GetConnection();
 		if (pconn != NULL)
 		{
+			char buffer[100];
 			sql::Statement  *pstmt; 
 			sql::ResultSet  *pres; 
 			cout<<"Successful! Current Size is "<<CConnctionPool::GetInstance().GetCurrentSize()<<endl;
 			pstmt = pconn->createStatement();
 			pstmt->execute("use cusemysql");
-			pres = pstmt->executeQuery("select * from children");
+			//pres = pstmt->executeQuery("select * from children");
+			//sprintf(buffer, "update children set fname='更改%d' where childno=%d;", i, i);
+			//pstmt->execute(buffer);
+			
+			/// 执行存储过程
+			pres = pstmt->executeQuery("call test_procedure()");		
+			int nRows = pres->rowsCount();  
+			cout<<nRows<<endl;
+			
 			while (pres->next())
 			{
 				int id = pres->getInt("childno");
@@ -36,6 +46,8 @@ int main(int argc, char* argv[])
 			delete pres;
 			delete pstmt;
 			CConnctionPool::GetInstance().ReleaseConnection(pconn);
+			//delete pconn;
+			//pconn = NULL;
 		}
 	}
 	cout<<"--Done.--"<<endl;
