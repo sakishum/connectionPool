@@ -24,6 +24,9 @@
 using namespace std;
 using namespace sql;
 
+/// 使用宏替代单例实例
+#define ConnPool CConnctionPool::GetInstance()
+
 class CConnctionPool {
 private:
 	int m_icurSize;		/// 当前已建立的数据库连接	
@@ -51,7 +54,7 @@ public:
 	Connection* GetConnection(void);				///	获得数据库连接
 	void ReleaseConnection(Connection *pConn);		/// 将数据库连接放回到连接池的容器中
 	static CConnctionPool& GetInstance(void);		/// 获取数据库连接池实例(工厂方法)
-	int GetCurrentSize(void);	/// 用于观测
+	int GetCurrentSize(void);						/// 用于观测(非必要)
 };
 
 #endif	/*_CONNECTION_POOL_H_*/

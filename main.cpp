@@ -16,12 +16,13 @@ int main(int argc, char* argv[])
 {
 	clock_t tStart, tStop;
 	tStart = clock();
-	CConnctionPool::GetInstance();
+
+	//CConnctionPool::GetInstance();	/// 非必要
 	for (int i = 0; i < 8000; ++i)
 	//int i = 0;
 	{
 		cout<<i<<endl;
-		Connection* pconn = CConnctionPool::GetInstance().GetConnection();
+		Connection* pconn = ConnPool.GetConnection();	/// 获取连接
 		if (pconn != NULL)
 		{
 			char buffer[100];
@@ -44,12 +45,11 @@ int main(int argc, char* argv[])
 				string name = pres->getString("fname");
 				cout << name <<"  "<< pres->getString(3)<<endl;
 			}
-			CConnctionPool::GetInstance().ReleaseConnection(pconn);
+			ConnPool.ReleaseConnection(pconn);	/// 释放连接
 		}
 	}
 	tStop = clock();
-	printf("C++: %ldms.\n",
-			(tStop - tStart) * 1000 / CLOCKS_PER_SEC);
+	printf("C++: %ldms.\n",(tStop - tStart) * 1000 / CLOCKS_PER_SEC);
 	cout<<"--Done.--"<<endl;
 	return 0;
 }
