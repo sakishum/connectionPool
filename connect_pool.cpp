@@ -2,13 +2,14 @@
  * @file connect_pool.cpp
  * @Synopsis  Connection Pool for MySQL with pThread.
  * @author Saki Shum, sakishum1118@gmail.com
- * @version 0.1.7
+ * @version 0.1.8
  * @date 2013-03-05
  */
 #include <stdexcept> 
 #include <exception>  
 #include <stdio.h>  
 #include "connect_pool.h"
+#include "Tp_typedef.h"
 
 using namespace std;
 using namespace sql;
@@ -37,10 +38,10 @@ CConnctionPool::CConnctionPool(string url, string userName, string password, int
 		m_pdriver = get_driver_instance();
 	}
 	catch(sql::SQLException &e) {
-		perror("驱动连接出错;\n");
+		TP_LOG("驱动连接出错;\n");
 	}
 	/*catch(sql::runtime_error &e) {
-		perror("运行出错了\n");
+		TP_LOG("运行出错了\n");
 	}*/
 	this->InitConnection(m_imaxSize/2);
 }
@@ -82,7 +83,7 @@ void CConnctionPool::InitConnection(int iInitialSize)
 			m_connlist.push_back(pConn);
 			++(this->m_icurSize);
 		} else {
-			perror("创建Connection 出错!");
+			TP_LOG("创建Connection 出错!");
 		}
 	}
 	pthread_mutex_unlock(&lock);
@@ -101,11 +102,11 @@ Connection* CConnctionPool::CreateConnection(void)
 		return pConn;
 	} 
 	catch(sql::SQLException &e) {
-		perror("创建连接出现错误!");
+		TP_LOG("创建连接出现错误!");
 		return NULL;
 	}
 	/*catch(sql::runtime_error  &e) {
-		perror("运行时出现错误!");
+		TP_LOG("运行时出现错误!");
 		return NULL;
 	}*/
 }
@@ -196,10 +197,10 @@ void CConnctionPool::TerminateConnection(Connection *pConn)
 		try{		
 			pConn->close();
 		} catch(sql::SQLException &e) {
-			perror(e.what());
+			TP_LOG(e.what());
 		}
 		/*catch(sql::runtime_error  &e) {
-			perror(e.what());
+			TP_LOG(e.what());
 		}*/
 	}
 	delete pConn;
