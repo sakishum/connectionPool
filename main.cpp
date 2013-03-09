@@ -2,7 +2,7 @@
  * @file main.cpp
  * @Synopsis  Test MySQL connection pool with pThread
  * @author Saki Shum, sakishum1118@gmail.com
- * @version 0.0.1
+ * @version 0.1.7
  * @date 2013-03-05
  */
 

@@ -2,10 +2,11 @@
  * @file connect_pool.h
  * @Synopsis  Connection Pool for MySQL with pThread.
  * @author Saki Shum, sakishum1118@gmail.com
- * @version 0.0.1
+ * @version 0.1.7
  * @date 2013-03-05
  */
 /// Modify by Saki Shum @ 03/06/2013
+/// Modify by Saki Shum @ 03/09/2013
 
 #ifndef _CONNECTION_POOL_H_
 #define _CONNECTION_POOL_H_
