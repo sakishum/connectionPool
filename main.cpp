@@ -11,6 +11,7 @@
 #include "connect_pool.h"
 
 using namespace std;
+using namespace sql;
 
 int main(int argc, char* argv[])
 {
@@ -26,7 +27,7 @@ int main(int argc, char* argv[])
 		if (pconn != NULL)
 		{
 			char buffer[100];
-			std::auto_ptr<sql::Statement> pstmt(pconn->createStatement()); 
+			auto_ptr<Statement> pstmt(pconn->createStatement()); 
 			cout<<"Successful! Current Size is "<<CConnctionPool::GetInstance().GetCurrentSize()<<endl;
 			pstmt->execute("use cusemysql");
 			//pres = pstmt->executeQuery("select * from children");
@@ -34,7 +35,7 @@ int main(int argc, char* argv[])
 			//pstmt->execute(buffer);
 			
 			/// 执行存储过程
-			std::auto_ptr<sql::ResultSet> pres(pstmt->executeQuery("call test_procedure()"));		
+			auto_ptr<ResultSet> pres(pstmt->executeQuery("call test_procedure()"));		
 			int nRows = pres->rowsCount();  
 			cout<<nRows<<endl;
 			

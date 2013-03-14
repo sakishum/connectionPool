@@ -13,6 +13,7 @@
 #define _CONNECTION_POOL_H_
 
 #include <iostream>
+
 #include <mysql_connection.h>
 #include <cppconn/driver.h>
 #include <cppconn/connection.h>
@@ -20,6 +21,8 @@
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h>
 #include <cppconn/prepared_statement.h>
+
+#include <memory> 
 #include <pThread.h>
 #include <list>
 
@@ -40,8 +43,10 @@ private:
 	list<Connection*>m_connlist;	/// 连接池的容器队列
 	pthread_mutex_t lock;			/// 线程锁
 	Driver *m_pdriver;				/// 连接数据库驱动
-
+	/// 将函数声明为另一个类的friend，可以使此函数不受private constuctors的约束。
 	friend class auto_ptr<CConnctionPool>;				/// 使用智能指针
+	/// 即使从未被调用也会被构造(析构);如果对象使用static 修饰，意思是只有一个对象会被产生出来。
+	/// 构造函数属性为 private ，可以防止对象的产生。(auto_ptr need #include <memory>)
 	static auto_ptr<CConnctionPool> auto_ptr_instance;	/// 惟一实例
 
 private:

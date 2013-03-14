@@ -6,6 +6,7 @@
  * @date 2013-02-26
  */
 #include <iostream>
+#include <string.h>
 #include <stdarg.h>
 #include <time.h>
 #include <fstream>
@@ -32,6 +33,7 @@ void Tp_write_to_debug_log(const char *format, ...) {
     ofstream debug_log;
     debug_log.open(debugDir.c_str(),ios::app);
     if(debug_log.is_open()) {
+		/// strlen need #include <string.h>
         debug_log.write(date, strlen(date)-1);
         debug_log << '\t';
         debug_log << buffer << endl;

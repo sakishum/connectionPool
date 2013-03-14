@@ -21,6 +21,7 @@ const string g_sdefaultPass = "qwer1234";
 const int g_imaxSize = 50;
 
 /// 单例声明
+/// 类内 class static 除了在class 之内声明，还需要在class 之外定义.
 auto_ptr<CConnctionPool> CConnctionPool::auto_ptr_instance;
 
 /**
@@ -177,6 +178,7 @@ void CConnctionPool::TerminateConnectionPool(void)
 {
 	list<Connection*>::iterator iconn;
 	pthread_mutex_lock(&lock);
+	/// 为了符合泛型编程而使用 != 判断
 	for (iconn=m_connlist.begin(); iconn != m_connlist.end(); ++iconn)
 	{
 		this->TerminateConnection(*iconn);	/// 销毁连接池中的连接

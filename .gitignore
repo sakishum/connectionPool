@@ -1,4 +1,4 @@
-# Object files                                                                                                                                              
+# Object files
 *.o
  
  
@@ -18,3 +18,5 @@
 *.exe
 *.out 
 *.app
+*.DS_Store
+*.swp
