@@ -6,14 +6,14 @@
  * @date 2013-02-26
  */
 #include <iostream>
-#include <string.h>
 #include <stdarg.h>
 #include <time.h>
 #include <fstream>
+#include <sys/time.h>
 #include "Tp_typedef.h"
 using namespace std;
 
-const string debugDir = "debug_log.txt";
+const string debugDir = "debug_log.log";
 
 /// write debug log
 void Tp_write_to_debug_log(const char *format, ...) {
@@ -33,10 +33,23 @@ void Tp_write_to_debug_log(const char *format, ...) {
     ofstream debug_log;
     debug_log.open(debugDir.c_str(),ios::app);
     if(debug_log.is_open()) {
-		/// strlen need #include <string.h>
         debug_log.write(date, strlen(date)-1);
         debug_log << '\t';
         debug_log << buffer << endl;
         debug_log.close();
     }
 }
+
+/// Universal Interface
+/**
+ * @Synopsis  timeGetTime 
+ *
+ * @Returns   microsecond (1s = 1000ms)
+ */
+unsigned int timeGetTime(void) 
+{   
+	struct timeval now; 
+	gettimeofday(&now, NULL); 
+	return now.tv_sec*1000 + now.tv_usec/1000000; 
+}   
+

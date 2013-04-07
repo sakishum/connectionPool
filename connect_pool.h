@@ -30,7 +30,7 @@ using namespace std;
 using namespace sql;
 
 /// 使用宏替代单例实例
-#define ConnPool CConnctionPool::GetInstance()
+#define MySQLPool CConnctionPool::GetInstance()
 
 class CConnctionPool {
 private:

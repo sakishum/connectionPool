@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 	//int i = 0;
 	{
 		cout<<i<<endl;
-		Connection* pconn = ConnPool.GetConnection();	/// 获取连接
+		Connection* pconn = MySQLPool.GetConnection();	/// 获取连接
 		if (pconn != NULL)
 		{
 			char buffer[100];
@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
 				string name = pres->getString("fname");
 				cout << name <<"  "<< pres->getString(3)<<endl;
 			}
-			ConnPool.ReleaseConnection(pconn);	/// 释放连接
+			MySQLPool.ReleaseConnection(pconn);	/// 释放连接
 		}
 	}
 	tStop = clock();

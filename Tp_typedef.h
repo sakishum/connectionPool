@@ -82,5 +82,6 @@ typedef enum _Ret {
 ///=======================函数global function===============
 /// 全局函数声明
 void Tp_write_to_debug_log(const char *format, ...);
+unsigned int timeGetTime(void);
 
 #endif /*__ASSIST_H__*/
